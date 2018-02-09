@@ -1,14 +1,16 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar color="oranges">
     <ion-title>
-      Ionic Blank
+      Swipeable Tabs Demo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+  <super-tabs tabsPlacement="top" toolbarColor="light" toolbarBackground="oranges" indicatorColor="light"
+   badgeColor="primary" (tabSelect)="onTabSelected($event)">
+   <super-tab *ngFor="let page of pages" [root]="page.pageName" [icon]="page.icon" [id]="page.id"></super-tab>
+
+  </super-tabs>
+ 
 </ion-content>
